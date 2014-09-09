@@ -146,7 +146,7 @@ def build_plot(normalized_graph):
 
     for key, value in normalized_graph.items():
     
-        plot.append([math.log(key), math.log(value)])
+        plot.append([math.log(key, 10), math.log(value, 10)])
         
     
     return plot
@@ -169,8 +169,7 @@ normalized_plot = build_plot(normalized_distribution)
 
 print normalized_plot
 
-simpleplot.plot_lines("Iteration counts", 600, 600, "input", "counter", [normalized_plot])
-
+simpleplot.plot_scatter("Iteration counts", 600, 600, "input", "counter", [normalized_plot])
 
 
 
